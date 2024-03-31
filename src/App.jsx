@@ -3,7 +3,7 @@ import './App.css'
 const App = () => {
   return (
     <div className='bg'>
-      appin prosjdflsjd
+      production
     </div>
   )
 }
