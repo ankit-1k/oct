@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import './style.css'
 import Typed from './components/Typed';
-import Plot from 'react-plotly.js';
+// import Plot from 'react-plotly.js';
 import pdfFile from './img/r.pdf';
 import logo from './img/logo.png';
 import AOS from 'aos';// aos
@@ -24,45 +24,45 @@ const Speech = () => {
   const [boot, setBoot] = useState(true)
   const [JS, setJS] = useState(true)
   const [react, setreact] = useState(true)
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
   // plotly data
-  useEffect(() => {
-    updateData()
-  }, [html, JS, react, boot])
-  const updateData = () => {
-    const newData = [
-      {
-        x: [],
-        y: [],
-        type: "bar",
-        marker: {
-          color: 'white',
-        },
-      }
-    ]
-    if (html) {
-      newData[0].x.push("html & CSS")
-      newData[0].y.push(85)
-    }
-    if (boot) {
-      newData[0].x.push("bootstrap")
-      newData[0].y.push(80)
-    } if (JS) {
-      newData[0].x.push("JS")
-      newData[0].y.push(95)
-    } if (react) {
-      newData[0].x.push("react")
-      newData[0].y.push(85)
-    }
-    setData(newData)
-  }
-  const layout = {
-    paper_bgcolor: `#03045e`,
-    plot_bgcolor: `#03045e`,
-    font: {
-      color: 'rgba(255, 255, 255, 1)'
-    }
-  };
+  // useEffect(() => {
+  //   updateData()
+  // }, [html, JS, react, boot])
+  // const updateData = () => {
+  //   const newData = [
+  //     {
+  //       x: [],
+  //       y: [],
+  //       type: "bar",
+  //       marker: {
+  //         color: 'white',
+  //       },
+  //     }
+  //   ]
+  //   if (html) {
+  //     newData[0].x.push("html & CSS")
+  //     newData[0].y.push(85)
+  //   }
+  //   if (boot) {
+  //     newData[0].x.push("bootstrap")
+  //     newData[0].y.push(80)
+  //   } if (JS) {
+  //     newData[0].x.push("JS")
+  //     newData[0].y.push(95)
+  //   } if (react) {
+  //     newData[0].x.push("react")
+  //     newData[0].y.push(85)
+  //   }
+  //   setData(newData)
+  // }
+  // const layout = {
+  //   paper_bgcolor: `#03045e`,
+  //   plot_bgcolor: `#03045e`,
+  //   font: {
+  //     color: 'rgba(255, 255, 255, 1)'
+  //   }
+  // };
   // date
   const currentHour = new Date().getHours();
   // state mgmt
@@ -618,7 +618,7 @@ const Speech = () => {
         <section className="navigation">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id='costome-nav'>
             <div className="container-fluid">
-              <a className="navbar-brand text-warning"><img src={logo} className='logo' height={50} width={150} alt="" data-aos="flip-up" /></a>
+              <p href='#' className="navbar-brand text-warning"><img src={logo} className='logo' height={50} width={150} alt="" data-aos="flip-up" /></p>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -637,17 +637,17 @@ const Speech = () => {
                     <div className="hr"></div>
                   </li>
                   <li className="nav-item" data-aos="zoom-in-down">
-                    <a type="button" className="nav-link" style={{ color: "#00b4d8" }} data-bs-toggle="modal" data-bs-target="#modal-ins">
+                    <p type="button" className="nav-link" style={{ color: "#00b4d8" }} data-bs-toggle="modal" data-bs-target="#modal-ins">
                       Instruction
-                    </a>
+                    </p>
                     <div className="hr"></div>
                   </li>
                   <li className="nav-item" data-aos="zoom-in-down">
-                    <a className="nav-link text-info">
+                    <p className="nav-link text-info">
                       <button className='flame' onClick={AutoAction} disabled={isDisabled}>
                         start
                       </button>
-                    </a>
+                    </p>
                   </li>
                 </ul>
               </div>
@@ -731,11 +731,11 @@ const Speech = () => {
           data-aos-anchor-placement="top-center">
           <div className="wrap-slilset">
             <div>
-              <Plot
+              {/* <Plot
                 data={data}
                 key={JSON.stringify(data)}
                 layout={layout}
-              />
+              /> */}
               <dl className='skill-list'>
                 <div className="form-check form-switch">
                   <input className="form-check-input" type="checkbox" id="html" onChange={FireHtml} checked={html} />
