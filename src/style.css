@@ -1,0 +1,500 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+body {
+  scrollbar-width: none;
+  font-family: Helvetica;
+}
+
+/* nav */
+nav ul li:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 1px gray;
+}
+
+.hover-title {
+  position: relative;
+  display: inline-block;
+}
+.nav-item {
+  position: relative;
+}
+.hr{
+  background-color: red;
+  width: 0px;
+  transition: 0.5s;
+  height: 2px;
+}
+.hr:hover{
+  width: 20px;
+}
+.nav-item:hover .hr {
+  width: 100%;
+}
+
+
+
+.hover-title:hover::before {
+  content: attr(title);
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show the tooltip on hover */
+.hover-title:hover::before {
+  opacity: 1;
+}
+
+/* heading */
+/* CSS */
+.heading {
+  font-family: 'Arial', sans-serif;
+  font-size: 2em;
+  color: #00b4d8;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* instruction table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #ebe1e1;
+}
+
+tr td {
+  color: #2e3030;
+}
+
+@media (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #ddd;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right;
+  }
+
+  td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}
+
+.wrapper-banner {
+  /* background-color: black; */
+  /* background-image: url('https://wallpapercave.com/wp/wp2864012.gif'); */
+  background-image: url('./img/banner.gif');
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sec-skill-1 {
+  margin-top: 30px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.sec-skill-1 .sk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-list {
+  display: flex;
+  justify-content: center;
+}
+
+.skill-list div {
+  margin-left: 15px;
+}
+
+.wrap-slilset {
+  display: flex;
+  justify-content: center;
+}
+
+/* plotly */
+@media (max-width:741px) {
+  .switch-1 {
+    display: none;
+  }
+}
+
+@media (min-width:741px) {
+  .switch-0 {
+    display: none;
+  }
+}
+
+.progress {
+  width: 70%;
+  height: 25px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  background-color: #03045e;
+  transition: width 0.6s ease;
+}
+
+.html {
+  width: 30%;
+  text-align: left;
+}
+
+/* worki */
+.work {
+  margin-top: 30px;
+}
+
+.work h2 {
+  margin-top: 50px;
+}
+
+.sec-work {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sec-work .card {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  transform: rotate(10deg);
+  border-top-right-radius: 50px;
+  transition: 0.5s;
+  box-shadow: 10px 10px gray;
+  background-color: #03045e;
+  color: white;
+  cursor: pointer;
+}
+.form-check-input{
+  cursor: pointer;
+}
+.sec-work .card:hover {
+  transform: rotate(0deg);
+  box-shadow: none;
+  border: none;
+  border-right: 3px solid gray;
+  background-image: linear-gradient(45deg, gray, white);
+}
+
+.sec-work .card:hover .card-body {
+  display: none;
+}
+
+.sec-work .card:hover:after {
+  text-align: center;
+  content: 'Click Here';
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: black;
+}
+
+.sec-work .card .card-title {
+  text-align: center;
+}
+
+/* about */
+.card-about {
+  /* background-image: url('./img/logo.png'); */
+  background-color: rgb(42, 53, 42);
+  background-color: #03045e;
+  /* text-shadow: 1px 1px black; */
+  background-position: center center;
+  background-attachment: fixed;
+  border-radius: 40px;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.sec-about {
+  display: flex;
+  justify-content: center;
+}
+
+.card-about {
+  width: 50%;
+  padding: 20px;
+}
+
+/* skill */
+.skill-head {
+  margin-top: 100px;
+}
+
+/* resume cards */
+.sec-resume {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sec-resume .card {
+  margin: 10px;
+  border-radius: 30px;
+  transition: 0.5s;
+  color: black;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  border: none;
+}
+
+.sec-resume .card:hover {
+  transform: scale(0.9) !important;
+  box-shadow: none;
+}
+
+.sec-resume .card .card-title {
+  color: #00b4d8;
+}
+
+/* download btn */
+.download-resume {
+  margin-top: 50px;
+}
+
+.download {
+  border: none;
+  border-radius: 10px;
+  padding: 18px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #fff;
+}
+
+.download:hover {
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+}
+
+/* social media */
+.contact {
+  position: absolute;
+  bottom: -120px;
+  right: 10px;
+}
+
+.contact-sec {
+  display: block;
+}
+
+.contact svg {
+
+  /* padding: 5px; */
+}
+
+.fb,
+.insta,
+.link,
+.twit,
+.git {
+  padding: 5px;
+  box-shadow: 2px 2px 1px rgb(42, 53, 42);
+  transform: rotate(29deg);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.fb:hover,
+.insta:hover,
+.link:hover,
+.twit:hover,
+.git:hover {
+  box-shadow: none !important;
+  color: rgb(42, 53, 42);
+}
+
+/* footer */
+.footer {
+  margin-top: 50px;
+}
+
+/* bot */
+.custom-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.online{
+  margin-top: -20px;
+}
+.start{
+  margin-right: 5px;
+}
+/*  */
+.flame {
+  /* background-image: url('https://th.bing.com/th/id/R.f323391cd01065efc3b9e2c756371566?rik=pnK1seOo7Moufg&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f2%2f22%2fAnimated_fire_by_nevit.gif&ehk=%2fGqupj0TY0nEha3aVBs%2fA0Iv5UIAttwazxHjXiPrGVg%3d&risl=1&pid=ImgRaw&r=0'); */
+  background-image: url('./img/start_bluefiregif.gif');
+  filter: brightness(70%);
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+  border: none;
+  /* border-radius: 5px; */
+}
+
+.flame:hover {
+  /* background-image: linear-gradient(45deg,red,gray,black); */
+  filter: brightness(100%);
+}
+
+.modal-bg {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/563cc987e4b05a2939898c49/1506210816573-OY3PBRXTVKXSQU0U23FP/ke17ZwdGBToddI8pDm48kPnsf5mMwK3KDy1tisBlUmRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzo4SI7WUt2Kh3mJ9yIXE1J2LwB1WS8XsjNPjOfnyfL5aVyG4ZMghpx64iX7JBzitc/ihealth-AI.gif');
+  background-size: cover;
+  background-position: center center;
+  color: whitesmoke;
+}
+.close-btn {
+  border: none;
+  background-color: red;
+} 
+.player {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player button {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 30px;
+}
+
+.wrap-txt {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  margin-top: 20px;
+  height: 300px;
+}
+
+.wrap-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrap-footer div {
+  margin: 10px;
+}
+
+.wrap-footer .card:hover {
+  background-image: linear-gradient(45deg, gray, white);
+  border: none;
+}
+
+.shake-icon:hover {
+  animation: shake 2s ease-in-out infinite;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: scale(0.9);
+  }
+
+  10% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.1)
+  }
+}
+
+/* media */
+@media (max-width: 650px) {
+  .card-about {
+    width: 100%;
+  }
+}
+
+
+/* darkmode */
+.dark-bg {
+  background-color: #333;
+}
+
+.light-bg {
+  background-color: white;
+}
+
+.light-text {
+  color: white;
+}
+
+.dark-text {
+  color: black;
+}
