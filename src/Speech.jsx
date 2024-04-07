@@ -10,6 +10,7 @@ import AOS from 'aos';// aos
 import 'aos/dist/aos.css';
 import { useTts } from 'react-tts'; //speek
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Contact from './components/Contact';
 const Speech = () => {
   const { speak } = useTts();
   // update 2.0
@@ -24,38 +25,6 @@ const Speech = () => {
   const [boot, setBoot] = useState(true)
   const [JS, setJS] = useState(true)
   const [react, setreact] = useState(true)
-  // const [data, setData] = useState()
-  // plotly data
-  // useEffect(() => {
-  //   updateData()
-  // }, [html, JS, react, boot])
-  // const updateData = () => {
-  //   const newData = [
-  //     {
-  //       x: [],
-  //       y: [],
-  //       type: "bar",
-  //       marker: {
-  //         color: 'white',
-  //       },
-  //     }
-  //   ]
-  //   if (html) {
-  //     newData[0].x.push("html & CSS")
-  //     newData[0].y.push(85)
-  //   }
-  //   if (boot) {
-  //     newData[0].x.push("bootstrap")
-  //     newData[0].y.push(80)
-  //   } if (JS) {
-  //     newData[0].x.push("JS")
-  //     newData[0].y.push(95)
-  //   } if (react) {
-  //     newData[0].x.push("react")
-  //     newData[0].y.push(85)
-  //   }
-  //   setData(newData)
-  // }
   const layout = {
     paper_bgcolor: `#03045e`,
     plot_bgcolor: `#03045e`,
@@ -65,12 +34,13 @@ const Speech = () => {
   };
   const data = [
     {
-      x: [1, 2, 3, 4],
-      y: [10, 11, 12, 13],
+      x: ['html', 'css', 'js', 'react'], // Use category names as x values
+      y: [85, 80, 95, 85], // Use corresponding y values
       type: 'bar',
       marker: {
         color: 'white',
       },
+      textposition: 'auto', // Automatically position the text below the bars
     },
   ];
   // date
@@ -826,6 +796,8 @@ const Speech = () => {
         <section className="download-resume d-flex justify-content-center">
           <button className='download' onClick={downloadPDF}>Download CV</button>
         </section>
+        {/* contact me */}
+        <Contact />
         <section className="contact">
           <div className="contact-sec">
             <div className="fb" onClick={FireFb} data-aos="zoom-in-right">
