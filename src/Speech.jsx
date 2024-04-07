@@ -28,7 +28,7 @@ const Speech = () => {
   // plotly data
   useEffect(() => {
     updateData()
-  }, [])
+  }, [html, JS, react, boot])
   const updateData = () => {
     const newData = [
       {
