@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import './style.css'
 import Typed from './components/Typed';
-// import Plot from 'react-plotly.js';
+import Plot from 'react-plotly.js';
 import pdfFile from './img/r.pdf';
 import logo from './img/logo.png';
 import AOS from 'aos';// aos
@@ -24,45 +24,45 @@ const Speech = () => {
   const [boot, setBoot] = useState(true)
   const [JS, setJS] = useState(true)
   const [react, setreact] = useState(true)
-  // const [data, setData] = useState([])
+  const [data, setData] = useState()
   // plotly data
-  // useEffect(() => {
-  //   updateData()
-  // }, [html, JS, react, boot])
-  // const updateData = () => {
-  //   const newData = [
-  //     {
-  //       x: [],
-  //       y: [],
-  //       type: "bar",
-  //       marker: {
-  //         color: 'white',
-  //       },
-  //     }
-  //   ]
-  //   if (html) {
-  //     newData[0].x.push("html & CSS")
-  //     newData[0].y.push(85)
-  //   }
-  //   if (boot) {
-  //     newData[0].x.push("bootstrap")
-  //     newData[0].y.push(80)
-  //   } if (JS) {
-  //     newData[0].x.push("JS")
-  //     newData[0].y.push(95)
-  //   } if (react) {
-  //     newData[0].x.push("react")
-  //     newData[0].y.push(85)
-  //   }
-  //   setData(newData)
-  // }
-  // const layout = {
-  //   paper_bgcolor: `#03045e`,
-  //   plot_bgcolor: `#03045e`,
-  //   font: {
-  //     color: 'rgba(255, 255, 255, 1)'
-  //   }
-  // };
+  useEffect(() => {
+    updateData()
+  }, [html, JS, react, boot])
+  const updateData = () => {
+    const newData = [
+      {
+        x: [],
+        y: [],
+        type: "bar",
+        marker: {
+          color: 'white',
+        },
+      }
+    ]
+    if (html) {
+      newData[0].x.push("html & CSS")
+      newData[0].y.push(85)
+    }
+    if (boot) {
+      newData[0].x.push("bootstrap")
+      newData[0].y.push(80)
+    } if (JS) {
+      newData[0].x.push("JS")
+      newData[0].y.push(95)
+    } if (react) {
+      newData[0].x.push("react")
+      newData[0].y.push(85)
+    }
+    setData(newData)
+  }
+  const layout = {
+    paper_bgcolor: `#03045e`,
+    plot_bgcolor: `#03045e`,
+    font: {
+      color: 'rgba(255, 255, 255, 1)'
+    }
+  };
   // date
   const currentHour = new Date().getHours();
   // state mgmt
@@ -731,11 +731,11 @@ const Speech = () => {
           data-aos-anchor-placement="top-center">
           <div className="wrap-slilset">
             <div>
-              {/* <Plot
+              <Plot
                 data={data}
                 key={JSON.stringify(data)}
                 layout={layout}
-              /> */}
+              />
               <dl className='skill-list'>
                 <div className="form-check form-switch">
                   <input className="form-check-input" type="checkbox" id="html" onChange={FireHtml} checked={html} />
