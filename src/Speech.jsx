@@ -493,10 +493,10 @@ const Speech = () => {
     var mailtoLink = "mailto:" + email;
     window.open(mailtoLink, "_blank");
   }
-  const FirePhone = () => {
-    const phoneNumber = '9178081269';
-    window.location.href = `tel:${phoneNumber}`;
-  };
+  // const FirePhone = () => {
+  //   const phoneNumber = '9178081269';
+  //   window.location.href = `tel:${phoneNumber}`;
+  // };
   const FireHtml = () => {
     setUI(!html)
   }
@@ -605,19 +605,19 @@ const Speech = () => {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav" style={{ marginLeft: "auto" }}>
                   <li className="nav-item" data-aos="zoom-in-down">
-                    <a className="nav-link" style={{ color: "#00b4d8" }} href="#work" onClick={FireWork}>Works</a>
+                    <a className="nav-link white" href="#work" onClick={FireWork}>Works</a>
                     <div className="hr"></div>
                   </li>
                   <li className="nav-item" data-aos="zoom-in-down">
-                    <a className="nav-link" style={{ color: "#00b4d8" }} aria-current="page" href="#about">About</a>
+                    <a className="nav-link white" aria-current="page" href="#about">About</a>
                     <div className="hr"></div>
                   </li>
                   <li className="nav-item" data-aos="zoom-in-down">
-                    <a className="nav-link" style={{ color: "#00b4d8" }} href="#resume">Resume</a>
+                    <a className="nav-link white" href="#resume">Resume</a>
                     <div className="hr"></div>
                   </li>
                   <li className="nav-item" data-aos="zoom-in-down">
-                    <p type="button" className="nav-link" style={{ color: "#00b4d8" }} data-bs-toggle="modal" data-bs-target="#modal-ins">
+                    <p type="button" className="nav-link white" data-bs-toggle="modal" data-bs-target="#modal-ins">
                       Instruction
                     </p>
                     <div className="hr"></div>
@@ -794,7 +794,7 @@ const Speech = () => {
         </section>
         {/*download resume  */}
         <section className="download-resume d-flex justify-content-center">
-          <button className='download' onClick={downloadPDF}>Download CV</button>
+          <button className='animated-button theme-color theme-bg-color' onClick={downloadPDF}>Download CV</button>
         </section>
         {/* contact me */}
         <Contact />
@@ -827,7 +827,7 @@ const Speech = () => {
             </div>
           </div>
         </section>
-        <section className="footer">
+        {/* <section className="footer">
           <div className="wrap-footer">
             <div className="gmail" onClick={FireGmail}>
               <div className="card">
@@ -866,7 +866,7 @@ const Speech = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       {/* bot-section */}
       <section className="bot">
@@ -1085,18 +1085,6 @@ const Speech = () => {
           </div>
         </div>
       </div>
-      {/* update 2.0 */}
-      {/* <div className="modal fade" id="auto-modal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div className="modal-content">
-            <div className="modal-body">
-              <section className="sec">
-                <button className="btn btn-outline-success" onClick={AutoAction}>Yes</button>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div >
   );
 };

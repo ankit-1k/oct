@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import contact_img from './../img/auc.gif';
 import './component.css'; // Import the CSS file for styling
 import loadingImg from './../img/loading.gif'
+import { useTts } from 'react-tts'; //speek
+
 const Contact = () => {
+    const { speak } = useTts();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -32,7 +35,7 @@ const Contact = () => {
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-            setLoading(false); //akp
+            setLoading(false);
         };
         fetchData();
     }, []);
@@ -69,21 +72,23 @@ const Contact = () => {
             setAlert(<div className="alert alert-danger">Error submitting form data.</div>);
         }
         setLoading(false);
+        const utterance = new SpeechSynthesisUtterance('Thank you. We will contact you soon');
+        speak(utterance);
     };
 
 
     return (
         <div className='contact-form mt-3 position-relative'>
             <div className='contact-image' style={{ backgroundImage: `url(${contact_img})` }}>
-                <h1 className='text-center text-white'>Contact Me</h1>
+                <h1 className='text-center text-white blue-text'>Contact Me</h1>
                 <div className='form-container'>
                     <form onSubmit={handleSubmit}>
                         <input type="text" name='name' className='form-control w-100 mt-2' placeholder='Name' value={formData.name} onChange={handleChange} />
                         <input type="text" name='email' className='form-control mt-2' placeholder='Email' value={formData.email} onChange={handleChange} />
                         <textarea name="message" cols="30" rows="5" className='form-control mt-2' placeholder='Message' value={formData.message} onChange={handleChange}></textarea>
-                        <button type="submit" className="btn btn-outline-primary mt-2 d-flex ms-auto">Submit</button>
+                        <button type="submit" className=" animated-button mt-2 d-flex ms-auto">Submit</button>
                     </form>
-                    {loading && <img src={loadingImg} alt='Loading' className='loading-img'/>}
+                    {loading && <img src={loadingImg} alt='Loading' className='loading-img' />}
                     <div className="mt-2">
                         {alert}
                     </div>

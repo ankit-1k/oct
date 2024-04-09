@@ -11,14 +11,17 @@
     background-position: center;
     padding: 20px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Set the background color with low contrast */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Set the background color with low contrast */
 }
 
 .form-container {
-    background-color: rgba(255, 255, 255, 0.8); /* Set the background color for the form */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Set the background color for the form */
     padding: 20px;
     border-radius: 10px;
 }
+
 .loading-img {
     height: 200px;
     width: 200px;
@@ -26,4 +29,73 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.blue-text {
+    /* display: inline-block; */
+    font-weight: bold;
+    /* position: relative; */
+    color: transparent;
+    background: linear-gradient(45deg, #00f, #0ff, #00f);
+    /* Blue gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: glow 1s infinite alternate-reverse;
+    text-align: center;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f, 0 0 25px #00f, 0 0 30px #00f, 0 0 35px #00f;
+    }
+}
+
+  /* Footer */
+.footer {
+    color: #fff;
+    padding: 50px 0;
+    padding-bottom: 5px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    padding: 0 20px;
+    text-align: center; /* Center align content */
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px; /* Add margin to separate from text above */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #666;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .footer-section {
+        flex-basis: 50%; /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        flex-basis: 100%; /* Full width on even smaller screens */
+    }
 }
