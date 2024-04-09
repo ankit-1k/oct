@@ -295,13 +295,21 @@ tr td {
 }
 
 /* resume cards */
+/* .sec-resume {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} */
 .sec-resume {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .sec-resume .card {
+  width: calc(50% - 20px); /* 2 cards per row */
   margin: 10px;
   border-radius: 30px;
   transition: 0.5s;
@@ -310,14 +318,37 @@ tr td {
   border: none;
 }
 
+@media (min-width: 768px) {
+  .sec-resume .card {
+    width: calc(50% - 20px); /* 2 cards per row */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sec-resume .card {
+    width: calc(25% - 20px); /* 4 cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .sec-resume .card {
+    width: calc(100% - 20px); /* 1 card per row */
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
 .sec-resume .card:hover {
-  transform: scale(0.9) !important;
+  transform: scale(0.9);
   box-shadow: none;
 }
 
 .sec-resume .card .card-title {
   color: #00b4d8;
 }
+
 
 /* download btn */
 .download-resume {

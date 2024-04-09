@@ -75,6 +75,9 @@
     text-align: center; /* Center align content */
 }
 
+.footer-section p{
+    cursor: pointer;
+}
 .social-media {
     display: flex;
     justify-content: space-around;
