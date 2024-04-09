@@ -34,8 +34,8 @@ const Speech = () => {
   };
   const data = [
     {
-      x: ['html & css', 'js', 'bootstrap & tailwind', 'react','node js','Firebase'], // Use category names as x values
-      y: [85, 80, 90, 80,60,65], // Use corresponding y values
+      x: ['html & css', 'js', 'bootstrap & tailwind', 'react', 'node js', 'Firebase'], // Use category names as x values
+      y: [85, 80, 90, 80, 60, 65], // Use corresponding y values
       type: 'bar',
       marker: {
         color: 'white',
@@ -543,6 +543,8 @@ const Speech = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    const utterance = new SpeechSynthesisUtterance('Resume downloaded. please check Download section. Thank you boss');
+    speak(utterance);
   };
   // update 2.0 date 05-03-2024
   const showMessage = () => {
@@ -749,7 +751,7 @@ const Speech = () => {
             <div className="card hello" data-aos="fade-up"
               data-aos-anchor-placement="top-center">
               <div className={`card-body`}>
-                <h5 className="card-title">Freelencing</h5>
+                <h5 className="card-title">Freelancing</h5>
                 <p className="card-text">
                   I specialize in creating sleek static websites tailored for small YouTubers. Elevate your online presence with a personalized site showcasing your content, increasing visibility, and engaging your audience. Let's turn your YouTube channel into a professional brand.                </p>
 

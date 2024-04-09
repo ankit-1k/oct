@@ -42,9 +42,10 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Check if any of the fields are empty
         if (!formData.name || !formData.email || !formData.message) {
             setAlert(<div className="alert alert-danger">Please fill out all fields.</div>);
+            const utterance = new SpeechSynthesisUtterance('Please fill out all fields.');
+            speak(utterance);
             return;
         }
 
